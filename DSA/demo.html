@@ -22,23 +22,45 @@
 
         body {
             display: flex;
+            flex-direction: column;
             width: 100%;
             height: 100%;
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
         }
+
+        #container,
+        #container1 {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            gap: 2rem;
+        }
+
+        #container1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.2rem;
+            color: red;
+        }
     </style>
 
 
     <div id="container">
-        <center>
-            <button id="btn">Click Me!...</button>
-            <h1>Thrisha</h1>
+        <button id="btn">Click Me!...</button>
+        <h1>Thrisha</h1>
 
-            <button id="btn1">Click Me!...</button>
-            <h1>katukuri</h1>
-        </center>
+        <button id="btn1">Click Me!...</button>
+        <h1>katukuri</h1>
+    </div>
+    <div id="container1">
+
     </div>
     <script>
         // let container = document.getElementsByClassName('container')[0].addEventListener(
@@ -75,39 +97,159 @@
         // })
 
 
-        let container = document.getElementById('container')
+        //     let container1 = document.getElementById('container1')
+        //     let products = [
+        //         { name: 'hi', age: 20 },
+        //         { name: 'hello', age: 21 },
+        //         { name: 'hey', age: 22 },
+        //         { name: 'hai', age: 23 },
+        //     ]
+        //     //forEach doesn't return values
+        //    let res= products.forEach((items) => {
+        //         container1.innerHTML += `
+        //         <p>${items.name} : ${items.age}</p>
+        //         `
 
-        let products = [
-            { name: 'hi', age: 20 },
-            { name: 'hello', age: 21 },
-            { name: 'hey', age: 22 },
-            { name: 'hai', age: 23 },
-        ]
-       let res= products.forEach((items) => {
-            container.innerHTML += `
-            <p>${items.name} : ${items.age}</p>
-            `
-
-        })
-        console.log(products)
-        console.log(res)
+        //     })
+        //     console.log(products)
+        //     console.log(res)
 
 
-        let products1 = [
-            { name1: 'hi', age1: 20 },
-            { name1: 'hello', age1: 21 },
-            { name1: 'hey', age1: 22 },
-            { name1: 'hai', age1: 23 },
-        ]
-        let res1= products1.map((items) => {
-            container.innerHTML += `
-            <p>${items.name1} : ${items.age1}</p>
-            `
-             return `${items.name1} : ${items.age1}`
+        // let products1 = [
+        //     { name1: 'hi', age1: 20 },
+        //     { name1: 'hello', age1: 21 },
+        //     { name1: 'hey', age1: 22 },
+        //     { name1: 'hai', age1: 23 },
+        // ]
+        // //map return values
+        // let res1= products1.map((items) => {
+        //     container1.innerHTML += `
+        //     <p>${items.name1}</p>
+        //     <p> ${items.age1}</p>
 
-        })
-        console.log(products1)
-        console.log(res1)
+        //     `
+        //      return `${items.name1} : ${items.age1}`
+
+        // })
+        // console.log(products1)
+        // console.log(res1)
+        // https://fakestoreapi.com/products'
+
+        //  fetch('https://fakestoreapi.com/products')
+        // .then(res => res.json())
+        // .then(data =>{
+        //     console.log(data[0].title);
+
+        // })
+
+
+        // let promise = new Promise((resolve,reject) =>{
+        //     fetch("https://fakestoreapi.com/products")
+        //     .then(res=>res.json())
+        //     .then(data=>resolve(data))
+        // })
+        // promise.then(items =>{
+        //     console.log(items[3].title)
+        // })        
+
+        // async function data() {
+        //     let data= await fetch('https://fakestoreapi.com/products')
+        //     let products = await data.json()
+        //     // let data1= products
+        //     console.log(products[0].title)
+
+        // }
+        // data()
+
+        //   for (let i = 1; i <=5; i++){
+        //     let stars = "";
+        //     for (let j = 1; j <= 5 - i; j++){
+        //      stars += " ";//triangle
+        //     }
+        //     for (let j = 1; j <= 2 * i - 1; j++) {
+        //     stars += '*';
+        // }
+        //     console.log(stars);
+        // }
+
+        for (let i = 1; i <= 5; i++) {
+            let stars = '';
+
+            for (let j = 1; j <= 5 - i; j++) {
+                stars += " ";
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                stars += "*";
+            }
+            console.log(stars)
+        }
+
+        for (let i = 5; i >= 1; i--) {
+            let stars = '';
+
+            for (let j = 1; j <= 5 - i; j++) {
+                stars += " ";
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                stars += "*";
+            }
+            console.log(stars)
+        }
+
+        let word = "thrisha"
+        for (let i = 0; i < word.length; i++) {
+            let stars = '';
+
+            for (let j = 0; j <= i; j++) {
+                stars += "";
+            }
+            for (let j = 0; j <= i; j++) {
+                stars += word[j];
+            }
+            console.log(stars)
+        }
+
+        let words = "thrishakatukuri"
+        let w = words.split('').reverse().join('')
+        console.log(w)
+
+        let reverse = '';
+        for (let i = words.length - 1; i >= 0; i--) {
+            reverse += words[i];
+        }
+        console.log(reverse)
+
+        //  let word1 = "thrisha katukuri "
+        //  word1= word1.trim()
+        // let w1= word1.split(' ')
+        // let w2 = ""
+        // for(let i = w1[1].length-1; i>=0; i--){
+        //     w2+= w1[1][i];
+        // }
+        // let result = w1[0] + " " + w2
+        // console.log(result)
+
+        let word1 = "thrisha katukuri ";
+        word1 = word1.trim(); // remove extra spaces at start/end
+
+        let w1 = word1.split(' '); // ["thrisha", "katukuri"]
+
+        let w2 = "";
+        for (let i = w1[1].length - 1; i >= 0; i--) {
+            w2 += w1[1][i];
+        }
+
+        let result = w1[0] + " " + w2;
+
+        console.log(result);
+
+
+
+
+
+
+
+
 
     </script>
 </body>
