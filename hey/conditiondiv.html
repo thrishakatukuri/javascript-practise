@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 5px;
+            background-color: black;
+        }
+        #box{
+            width:100px;
+            background-color: rgb(200, 23, 23);
+            box-shadow: 10px 10px 80px red;
+            height:100px;
+            border-radius: 30%;
+            margin:1px;
+        }
+        #btn{
+            position: absolute;
+            top:300px;
+            left:700px;
+            z-index: 11;
+            width:200px;
+            height: 50px;
+            font-size: 2rem;
+        }
+         .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        } 
+    </style>
+</head>
+<body>
+<center>
+    <button id="btn">clickMe!...</button>
+</center>
+<div class="container" id="boxContainer"></div> 
+
+    <script>
+        let btn = document.getElementById('btn');
+        let clickCount = 0;
+        let container = document.getElementById('boxContainer');
+
+
+        btn.addEventListener('click', () => {
+            if (clickCount >= 10){
+                btn.disabled = true;
+                btn.innerText = "Disabled";
+                return;
+            }
+            let div = document.createElement('div');
+            div.setAttribute('id', 'box');
+            console.log(div);
+             clickCount++;
+            container.appendChild(div); 
+        });
+
+
+        function multiples(hoursArray,wage,bonus,weekArray){
+            for (let i = 0; i < hoursArray.length; i++){
+               let hours = hoursArray[i];
+               let week = weekArray[i];
+               let salary;
+                  if ( hours <= 40){
+                      console.log( `${hours * wage}`);
+                  }
+                  else {
+                    let overTimeHrs = hours - 40;
+                    let overPay = overTimeHrs * (1.5* wage);
+                    salary =  (40 * `${wage}`) + overPay + bonus;
+                    }
+                    console.log(`${week}: salary is ${salary}`);
+                }
+            }
+    multiples([30,98,88,70],50,20,[1,2,3,4])
+
+
+    function currentBill(unitsArray, amountArray){
+            for (let i = 0; i < unitsArray.length; i++){
+                let unitsList = unitsArray[i];
+                let amount = amountArray[i];
+            //   let totalAmount = units * amount;
+
+            for (let j = 0; j < unitsArray.length; j++){
+              let units = unitsList[j];
+              let totalAmount = units * amount;
+
+              
+               if(units <= 50){
+                   console.log(`(${units} units:) RS: ${totalAmount}/-`);
+               }
+               else if (units >= 51 && units <= 100){
+                   console.log(`(${units} units:) RS:  ${totalAmount}/-`);
+               }
+               else if (units >= 101 && units <= 150){
+                   console.log(`(${units} units:) RS:  ${totalAmount}/-`);
+               }
+               else if (units >= 151 && units <= 199){
+                   console.log(`(${units} units:) RS:  ${totalAmount}/-`);
+               }
+               else if (units >= 200){
+                 let discountAmount = (10 * totalAmount) / 100;
+                 let finalAmount = totalAmount - discountAmount;
+                 console.log(`(${units} units:) After discount RS:  ${finalAmount}`);
+                }
+               }
+            }
+            }
+        currentBill([[12,35,50],[51,65,100],[101,145,150],[151,170,199],[200,250]],[1,2,3,4,5])
+        
+
+        function currentBill() {
+            let units= prompt("enter the number of units:")
+        if(units <= 50){
+            let bill = units * 1;
+           console.log(`(${units} units:) RS: ${bill}/-`);
+        }
+        else if (units >= 51 && units <= 100){
+         let bill = units * 2;
+            console.log(`(${units} units:) RS:  ${bill}/-`);
+        }
+        else if (units >= 101 && units <= 150){
+         let bill = units * 3;
+            console.log(`(${units} units:) RS:  ${bill}/-`);
+        }
+        else if (units >= 151 && units <= 199){
+         let bill = units * 4;
+            console.log(`(${units} units:) RS:  ${bill}/-`);
+        }
+        else if (units >= 200){
+         let bill = units * 5;
+          let discountAmount = (10 * bill) / 100;
+          let finalAmount = bill - discountAmount;
+          console.log(`(${units} units:) After 10% discount RS:  ${finalAmount}`);
+        }
+         }
+         currentBill()
+
+
+            // 
+            function currentBill() {
+                let units= prompt("enter the number of units:")
+                if(units <= 50){
+                    let bill = units * 1;
+                   console.log(`(${units} units:) RS: ${bill}/-`);
+                }
+                else if (units >= 51 && units <= 100){
+                 let bill = units * 2;
+                    console.log(`(${units} units:) RS:  ${bill}/-`);
+                }
+                else if (units >= 101 && units <= 150){
+                 let bill = units * 3;
+                    console.log(`(${units} units:) RS:  ${bill}/-`);
+                }
+                else if (units >= 151 && units <= 199){
+                 let bill = units * 4;
+                    console.log(`(${units} units:) RS:  ${bill}/-`);
+                }
+                else if (units >= 200){
+                 let bill = units * 5;
+                  let discountAmount = (10 * bill) / 100;
+                  let finalAmount = bill - discountAmount;
+                  console.log(`(${units} units:) After 10% discount RS:  ${finalAmount}`);
+                }
+            }
+            currentBill()
+
+            function multiples(Fizz,Buzz,FizzBuzz){
+           for(let i=1; i<=100; i++){
+               if ( i % 3 == 0){
+           console.log(Fizz);
+               }
+              else if ( i % 5 == 0){
+           console.log(Buzz);
+               }
+               else if ( i % 3 == 0  &&  i % 5 == 0){
+           console.log(FizzBuzz);
+               }
+               else{
+                   console.log(i);
+               }
+           }
+        }
+    multiples("Fizz", "Buzz", "FizzBuzz")
+
+
+
+
+
+
+            function multiples(){
+              let i = prompt("enter the value");
+                //  for(let i=1; i<=100; i++){
+                 if ( i % 3 == 0  &&  i % 5 == 0){
+                    console.log("FizzBuzz");
+                  }
+                  else if ( i % 3 == 0){
+                    console.log("Fizz");
+                  }
+                  else if ( i % 5 == 0){
+                    console.log("Buzz");
+                  }
+                  else{
+                      console.log(i);
+                  }
+               }
+            // }
+          multiples()
+
+           let units=210;
+        units=(49,99,149,198,201)
+        let amount=(1,2,3,4,5);
+       
+        function currentBill(unitsArray, amountArray){
+            for (let i = 0; i < unitsArray.length; i++){
+                let unitsList = unitsArray[i];
+                let amount = amountArray[i];
+            //   let totalAmount = units * amount;
+
+            for (let j = 0; j < unitsArray.length; j++){
+              let units = unitsList[j];
+              let totalAmount = units * amount;
+
+              
+               if(units <= 50){
+                   console.log(`(${units} units:) RS: ${totalAmount}/-`);
+               }
+               else if (units >= 51 && units <= 100){
+                   console.log(`(${units} units:) RS:  ${totalAmount}/-`);
+               }
+               else if (units >= 101 && units <= 150){
+                   console.log(`(${units} units:) RS:  ${totalAmount}/-`);
+               }
+               else if (units >= 151 && units <= 199){
+                   console.log(`(${units} units:) RS:  ${totalAmount}/-`);
+               }
+               else if (units >= 200){
+                 let discountAmount = (10 * totalAmount) / 100;
+                 let finalAmount = totalAmount - discountAmount;
+                 console.log(`(${units} units:) After discount RS:  ${finalAmount}`);
+                }
+               }
+            }
+            }
+        currentBill([[12,35,50],[51,65,100],[101,145,150],[151,170,199],[200,250]],[1,2,3,4,5])
+        currentBill([30,55,145,155,210],[1,2,3,4,5])
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Vadlidation</title>
+</head>
+<body>
+    <h1>Form Vadlidation</h1>
+    <form action="https://www.youtube.com/" onsubmit="return validation()">
+        <label for="">userNmae</label>
+        <input type="text" id="user"  required placeholder="Enter your userName">
+        <label for="">password</label>
+        <input type="text"  id="pass"  required placeholder="Enter your userName">
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        function validation(){
+            let user = document.getElementById('user').value;
+            let pass = document.getElementById('pass').value;
+            if(user.trim() === "" || pass.trim() === ""){
+                alert('invalid')
+                return false
+            }else{
+                alert('valid')
+                return true
+            }
+
+        }
+    </script>
+</body>
+</html>

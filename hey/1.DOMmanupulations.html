@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manupulations</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            border:0px;
+            background-color: orange;
+        }
+        h1{
+            margin-bottom:0px;
+        }
+        span{
+            background: linear-gradient(green,red);
+            background-clip: text;
+            color: transparent;
+            font-size: 3rem;
+            width:100%;
+        }
+        h2{
+            font-size: 4rem;
+        }
+        div{
+            width:100%;
+            height:100px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content:space-evenly;
+        }
+        button{
+            width:100px;
+            height:50px;
+            font-size: 1rem;
+        }
+        .box{
+            width:150px;
+            margin: 1px;
+        }
+        #append{
+            display: flex;
+            justify-content: space-evenly;
+            width:100%;
+            height:100px;
+        }
+       
+    </style>
+</head>
+<body>
+    <center><h1><span>DOM Manupulations </span>🤷‍♀️</h1></center>
+    <center><h2 id="btn22">hi thrisha</h2></center>
+    <div>
+        <button id="btn">Create</button>
+        <button id="btn1">set</button>
+        <button id="btn2">get</button>
+        <button id="btn3">replace</button>
+        <button id="btn4">remove</button>
+        <button id="btn5">Prepend</button>
+        <button id="btn6">Insert Before</button>
+        <button id="btn7">Append</button>
+
+        <div id="contain">
+            <p id="para">I am the existing element.</p>
+        </div>
+    </div>
+    <div id="append"> 
+     </div>
+     
+    <script>
+    //DOM Mnupulations
+    // 1.create
+    // 2.appendChild (shows on window)
+    // 3.setAttribute //shows class,id in console
+    // 4.getAttribute //doesnot show class,id in console
+    // 5.innerHTML/innerText
+    // 6.replaceChild
+    // 7.removeChild //op:-undefiend
+    // 8. append
+    // 9.prepend
+    // 10.insertBefore
+
+
+    //1.create
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click', () => {
+        let div = document.createElement('div')
+        div.style.backgroundColor = 'red';
+        div.style.width = '100px';
+        div.style.height = '100px';
+        div.style.margin = '1px';
+        document.body.appendChild(div);
+    });
+
+    // 3.setAttribute
+    let btn1 = document.getElementById('btn1');
+    btn1.addEventListener('click', () => {
+        let h1 = document.createElement('h1');
+        h1.innerHTML= 'Thrisha';
+        h1.setAttribute('class','box');//shows id,class in console
+        console.log(h1);
+        document.body.appendChild(h1);
+    });
+
+     // 4.getAttribute, 5.innerHTML/innerText
+     let btn2 = document.getElementById('btn2');
+     btn2.addEventListener('click', () => {
+        let h1 = document.createElement('h1');
+        h1.innerHTML= 'Thrisha'; //5.innerHTML/innerText
+        h1.setAttribute('class','box');
+        //doesnot show class,id in console
+        // console.log(h1);
+        document.body.appendChild(h1);
+        console.log(h1.getAttribute("class"));
+    });
+
+    // 6.replace
+    let replace = document.getElementById('btn3');
+    let replace1 = document.getElementsByTagName('h2');
+    replace.addEventListener('click', () => {
+    for (let i = 0; i < replace1.length; i++) { 
+        replace1[i].innerHTML = replace1[i].innerHTML.replace('hi', 'hello');
+    }
+    });
+
+    // 7.remove
+    let rep = document.getElementById('btn4');
+    let rep1 = document.getElementsByTagName('h2');
+    rep.addEventListener('click', () => {
+    for (let i = 0; i < rep1.length; i++) { 
+        rep1[i].innerHTML = rep1[i].innerHTML.replace('thrisha'," ");
+    }
+    });
+
+    // 8.append
+    document.getElementById('btn7').addEventListener('click', () => {
+        let newElement = document.createElement('p');
+        newElement.textContent = "Appended Text!";
+        container.append(newElement);
+    });
+
+    // 9.prepend
+    document.getElementById('btn5').addEventListener('click', () => {
+        let newElement = document.createElement('p');
+        newElement.textContent = "Prepended Text!";
+        container.prepend(newElement);
+    });
+
+    // 10.insertbefore
+       let btn5 = document.getElementById('btn6');
+       let para = document.getElementById('para');
+       let container = document.getElementById('contain');
+       btn5.addEventListener('click',() => {
+           let newPara = document.createElement('h1');
+           newPara.textContent = 'hello world';
+          contain.insertBefore(newPara, para);
+      });
+
+    </script>
+</body>
+</html>

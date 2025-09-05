@@ -1,0 +1,153 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Display Boxes</title>
+
+
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background-color: black;
+            /* display: flex; */
+            margin:1px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <button id="btn">clickMe!...</button>
+</center>
+<div class="container" id="boxContainer"></div> 
+
+    <script>
+        let btn = document.getElementById('btn');
+        let container = document.getElementById('boxContainer');
+
+
+        btn.addEventListener('click', () => {
+            let div = document.createElement('div');
+            div.classList.add('box'); 
+            console.log(div);
+            container.appendChild(div); 
+        });
+        </script></body></html> -->
+
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon Blast Effect</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    button {
+        box-shadow: 10px 20px 50px rgb(160, 110, 110);
+      font-size: 16px;
+      cursor: pointer;
+      border-radius:20px;
+      width:500px;
+      height:100px;
+      font-size: 2rem;
+      background-color:blue;
+      
+    }
+
+    #balloon-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .balloon {
+      position: absolute;
+      border-radius: 50px;
+      background-color:plum;
+      width: 50px;
+      height: 100px;
+      animation: balloon-animation 3s ease-out forwards infinite;
+      z-index: 10;
+    }
+
+    @keyframes balloon-animation {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="balloonBlastBtn">Good Afternoon </button>
+
+  <div id="balloon-container"></div>
+
+  <script>
+    document.getElementById('balloonBlastBtn').addEventListener('click', function() {
+      let balloonContainer = document.getElementById('balloon-container');
+
+      // Number of balloons
+      let balloonCount = 30;
+
+      // Generate balloons
+      for (let i = 0; i < balloonCount; i++) {
+        let balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+
+        // Random size
+        let size = Math.random() * (60 - 20) + 20;
+        balloon.style.width = `${size}px`;
+        balloon.style.height = `${size}px`;
+
+        // Random position
+        let left = Math.random() * window.innerWidth;
+        let top = Math.random() * window.innerHeight;
+        balloon.style.left = `${left}px`;
+        balloon.style.top = `${top}px`;
+
+        // Random animation duration
+        let duration = Math.random() * 3 + 2; // 2 to 5 seconds
+        balloon.style.animationDuration = `${duration}s`;
+
+        balloonContainer.appendChild(balloon);
+
+        balloon.addEventListener('animationend', () => {
+          balloon.remove();
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

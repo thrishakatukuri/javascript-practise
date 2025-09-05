@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+let obj={
+   name:"krishnaveni",
+   age:45,
+   occupation: "Entrepreneur"
+};
+let keys= Object.keys(obj);
+for(let i=0; i<keys.length; i++){
+    console.log(obj[keys[i]])
+}
+//output:-//krishnaveni 45 Entrepreneur
+
+// let obj={
+//     name:"thrisha",
+//     age:20,
+//     location:"ktdm"
+// };
+// let thri = Object.keys(obj);
+// for(let i=0; i<thri.length; i++){
+// console.log(thri[i]);
+// }
+
+
+//even numbers
+let age = 20;
+for (let i = 0; i <= 100; i++){
+    if(i % 2 === 0){
+        console.log(i);
+    }
+}
+
+//odd
+for (let j=1; j<=100;j++){
+    if(j%2==1){
+        console.log(j);
+    }
+}
+
+
+let name="hello";
+let k=0;
+function name1(){
+    if(k < name.length){
+        console.log(name.substring(0, k+1));
+        k++;
+        setTimeout(name1, 5);
+    }
+}
+name1();
+
+// let name2="hey";
+// for(i=0; i<name2.length; i++){
+// console.log(name2.substring(0, i+1));
+// }
+            
+       
+        
+
+
+    </script>
+</body>
+</html>

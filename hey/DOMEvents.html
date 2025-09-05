@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<style>
+    body{
+        font-size: 2rem;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(18, 152, 41);
+    }
+    p{
+        font-size: 2rem;
+         width:50%; 
+    }
+    button{
+        width:200px;
+        height:50px;
+        font-size: 2rem;
+        box-shadow: 10px 20px 50px black;
+    }
+    #btn{
+        width:200px; 
+        height:50px;
+        font-size: 1.5rem;
+        margin:30px;
+        box-shadow: 10px 20px 60px black ;
+    }
+    #input{
+        width:200px;
+        height:50px;
+        margin:30px;
+    }
+
+    h2{
+        background: linear-gradient(rgb(0, 64, 255),red);
+        background-clip: text;
+        color: transparent;
+        font-size: 2rem;
+    }
+    #image{
+        width:400px;
+        height:300px;
+        margin:30px;
+    }
+</style>
+<body>
+    <center>
+        <h1>Events🫡</h1>
+
+
+        <section>
+            <button id="page">click me!...</button>
+
+            <p id="heading" > 1.Welcome!...</p>
+            <button id="btn" >1.login</button>
+
+            <h2 id="prompt">2.thrisha katukuri</h2>
+
+            <input type="text" id="input">
+        </section>
+
+        <section class="img1">
+            <img  id="image" src="./wallpaper.png" alt="img">
+        </section>
+    </center>
+    <script>
+        //task-1:- color,bacground-color changing on click
+        let btn = document.getElementById('btn')
+        let p = document.getElementById('heading')
+
+        btn.addEventListener ('click', () =>{
+             p.style.color="brown";
+             btn.style.color="white";
+             p.style.backgroundColor="yellow";
+             btn.style.backgroundColor="blue";
+             btn.style.border="5px solid yellow";
+             console.log("btn");
+        }
+        );
+        btn.addEventListener ('mouseleave', () =>{
+             p.style.color="white";
+             btn.style.color="black";
+             p.style.backgroundColor="blue";
+             btn.style.backgroundColor="red";
+             btn.style.border="5px solid white";
+        }
+        );
+
+        //task-2:-prompt color
+        let h2 = document.getElementById('prompt')
+        let color = prompt('Enter the color');
+        h2.style.color = color;
+
+        //task-3:-image expansion
+        let img =  document.getElementById('image')
+        image.addEventListener ('click', () =>{
+            image.style.width="500px";
+            image.style.height="400px";
+        })
+        image.addEventListener ('mouseleave', () =>{
+            image.style.width="400px";
+            image.style.height="300px";
+        })
+
+        //task-4:- border,upper,lowercase
+        let input = document.getElementById('input')
+        input.addEventListener('focus', () => {
+            input.value = input.value.toLowerCase();
+            input.style.border = "5px solid yellow";
+            // input.value = input.value.toUpperCase();
+        })
+        input.addEventListener('blur', () => {
+            // input.value = input.value.toLowerCase();
+            input.value = input.value.toUpperCase();
+            input.style.border = "2px solid blue";
+        })
+
+        // task-5
+        let page = document.getElementById('page');
+        let colors = ["red", "yellow", "orange", "blue", "violet", "white"];
+        let index = 0;
+        page.addEventListener('click', () => {
+            document.body.style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length; // Cycle through colors
+        });
+        
+       
+    </script>
+</body>
+</html> 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+    <!-- <link rel="stylesheet" href="./Loops.html"> -->
+</head>
+<body>
+    <center><h1>Loops</h1></center>
+
+    <script>
+    // 1. Create an array for 5 emails and print 3 emails and exit the loop if index is greater than.
+        let array=["thrisha@email.com" , "krishnaveni@email.com","venni123@email.com" ,"jashu@email.com" ,"samjeev@enail.com" ];
+        for(i=0 ;i<=2; i++){
+             console.log(array[i]);
+         }
+         
+    //  2.(2.a) Create an array for 5 emails and print all the emails using while loop/ForLoop.                
+         let emails=["thrisha@email.com" , "krishnaveni@email.com","venni123@email.com" ,"jashu@email.com" ,"samjeev@enail.com" ];
+         for(i=0 ;i<emails.length; i++){
+             console.log(emails[i]);
+         }
+    //  2.(2.b) Create an array for 5 emails and print all the emails using while loop.
+        let email=["hey@email.com" , "hai@email.com","bro123@email.com" ,"mom@email.com" ,"dad@enail.com" ];
+        let j=0;
+        while(i<=4){
+            console.log(email[j]);
+            i++;
+         }   
+       
+    // 3.  Write a JavaScript program using a for loop to print the multiplication table of 2.
+        for(i=1; i<=10; i++){
+        let t=2*i;
+        console.log(`2 x ${i} = ${t}`);
+        }
+
+    // 4. Printing Stars in a Right-Angled Triangle
+        for (let i = 1; i <= 5; i++){           //rowssssssssssssss
+            let stars = "";
+            for (let j = 1; j <= i; j++){       ///columnssssssssss 
+             stars += "*";
+            }
+            console.log(stars);
+        }
+    // 5. Printing Stars in a  inverted Right-Angled Triangle
+        for (let i = 5; i >=1 ; i--){
+            let stars = "";
+            for (let j = 1; j <=i; j++){
+             stars += "*";
+            }
+            console.log(stars);
+        }
+
+    // 6. Printing Stars usinf for loops to print a pyramid of stars
+        for (let i = 1; i <=5; i++){
+            let stars = "";
+            for (let j = 1; j <= 5 - i; j++){
+             stars += " ";//triangle
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+            stars += '*';
+        }
+            console.log(stars);
+        }
+        for (let i = 5; i >=1; i--){
+            let stars = "";
+            for (let j = 1; j <= 5 - i; j++){
+             stars += " ";//triangle
+            }
+            for (let j = 1; j <= 2 * i-1; j++) {
+            stars += '*';
+        }
+            console.log(stars);
+        }
+        
+    </script>
+</body>
+</html>

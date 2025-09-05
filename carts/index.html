@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="./style.css">
+ </head>
+ <body>
+    <h1>Add to cart products</h1>
+    <section id="cart">
+      <div class="ranges">
+         <input class="sideinput"type="text" name="" id="input" oninput="filterProducts(products)"placeholder="Search products..."  > 
+        <div class="side">
+         <label for=""><input type="checkbox" name="" id="three" onchange="filterProducts(products)">3⭐</label>
+        </div> 
+        <div class="side"> 
+         <label for=""><input type="checkbox" name="" id="four"  onchange="filterProducts(products)">4⭐</label>
+        </div>
+        </div>
+     <div id="container"></div>
+  </section>
+
+<script src="./app.js"></script>  
+</body>
+</html>

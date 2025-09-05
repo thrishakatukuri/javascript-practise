@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D0M Demo</title>
+</head>
+<body>
+    <ul id="mobiles1" class="mvs">
+        <li id="k1">kalki1</li>
+        <li id="k2">kalki2</li>
+        <li id="k3">kalki3</li>
+        <li id="k4">kalki4</li>
+        <li id="k5">kalki5</li>
+    </ul>
+    <ul id="mobiles2" class="mvs">
+        <li id="k6">bahubali1</li>
+        <li id="k7">bahubali2</li>
+        <li id="k8">bahubali3</li>
+        <li id="k9">bahubali4</li>
+        <li id="k10">bahubali5</li>
+    </ul>
+    <script>
+         //DOM Selectors: (5)
+        //1. getElementsByTagName
+        //2. getElementsByClassName
+        //3. getElementsById
+        //4. querySelector
+        //5. querySelectorAll
+
+        //1. getElementsByTagName
+        let parent = document.getElementsByTagName('ul');
+        for (let i = 0; i < parent.length; i++) {parent[i].style.backgroundColor = 'red'; }
+        console.log(parent); //1.getElementsByTagName    
+       
+        //2. getElementsByClassName
+        let parent1 = document.getElementsByClassName('mvs');
+         for (let i = 0; i < parent1.length; i++) { parent1[i].style.backgroundColor = 'blue'; }
+         console.log(parent1); //2.getElementsByClassName    
+       
+        //3. getElementsById
+         let li= document.getElementById('k1');
+            li.style.backgroundColor = 'black';
+         console.log(li); //3.getElementsById 
+        
+        //4. querySelector
+        let parent2 = document.querySelector('ul') ;
+         parent2.style.backgroundColor = 'blue';
+        console.log(parent2);//4. querySelector (only takes 1st element rather than entire ul's)
+
+        //5. querySelectorAll (using loops)
+        let parent3 = document.querySelectorAll('ul') ;
+        for (let i = 0; i < parent3.length; i++) {parent3.style.backgroundColor = 'blue';}
+        console.log(parent3);//5. querySelectorAll (only takes every element rather than 1 ul)
+        
+
+        //5. querySelectorAll (using forEach)
+        let parent4= document.querySelectorAll('ul') ;
+        parent4.forEach(ul => {ul. style.backgroundColor = 'blue';});//using for each method
+        console.log(parent4);//5. querySelectorAll (only takes every element rather than 1 ul)
+
+       
+
+        
+    </script>
+</body>
+</html>

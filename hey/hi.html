@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blind Effect Example</title>
+  <!-- Include jQuery and jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #box{
+        width:200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:100px;
+        background-color:lightgreen;
+        margin:10px 0px;
+        }
+        #myParagraph {
+      color: black;
+      transition: color 0.3s ease;
+    }
+</style>
+<body>
+
+<button id="btn">click</button>
+
+<div id="box">Thrisha katukuri</div>
+<button id="Btn">Say Hello</button>
+
+<h2>list items</h2>
+  <ul id="myList">
+    <li>First item</li>
+    <li>Second item</li>
+  </ul>
+  <button onclick="addListItem()">Add Item</button>
+
+  <p id="myParagraph">thrisha!</p>
+
+  <label for="fontSizeSelect">Select font size:</label>
+  <select id="fontSizeSelect">
+    <option value="14px">Small</option>
+    <option value="18px">Medium</option>
+    <option value="24px">Large</option>
+    <option value="32px">Extra Large</option>
+  </select>
+  <p id="textParagraph">krishnaveni</p>
+  <button onclick="calculateSquareRoot()">Enter Number</button>
+  <p id="result"></p>
+  <pre id="output"></pre>
+
+
+
+<script>
+  let a = document.getElementById('btn');
+//   let directions = ["up", "down", "left", "right"];
+
+  a.addEventListener('click', () => {
+        // const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+    // $('#box').toggle("blind", { direction: randomDirection },500);
+    $('#box').toggle("blind", { direction: "left" },500);
+
+     });
+</script>
+<!--  
+ The call() method is used to invoke a function and set
+   the this value inside that function to a specific object.
+   The apply() method is used to call a function and set the value of this inside that function to a specific object.
+It also lets you pass arguments as an array.
+ Key Difference:
+call() → arguments are passed individually.
+apply() → arguments are passed as an array.  -->
+
+<script>
+    function diff(a,b) {
+  console.log( a +', ' + this.name  + ", " + b);
+}
+let person = { name: 'Thrisha katukuri'};
+
+diff.call(person, "Hello", "Indian"); 
+diff.apply(person, ["Hey" , "Indian"]);  
+
+ </script>
+
+<script>
+// some() and every() are array methods in JavaScript that help you check conditions on array elements. They’re especially useful for validation and filtering logic.
+//  some() , Returns true if at least one element in the array passes the condition.
+// Stops checking as soon as it finds one match.
+const numbers1 = [1, 2, 3, 4];
+
+const Even = numbers1.some(numbers1 => numbers1 % 2 === 0);
+console.log(Even);  // true (because 2 and 4 are even)
+
+//  every() , Returns true only if all elements pass the condition.
+// Stops checking as soon as one fails.
+const allPositive = numbers1.every(numbers1 => numbers1 > 0);
+console.log(allPositive);  // true (all numbers > 0)
+
+const allEven = numbers1.every(numbers1 => numbers1 % 2 === 0);
+console.log(allEven);  // false (not all are even)
+
+</script>
+
+<script>
+ const nums = [1, 2, 3];
+nums.forEach(num => {console.log(num * 2);});
+// forEach() is used here to perform an action for each item.
+// It does not return a new array.
+// Output goes to the console only, not stored anywhere.
+
+const nums1 = [1, 2, 3];
+const doubled = nums1.map(num => num * 2);
+console.log(doubled);  
+// map() creates a new array by transforming each element.
+// It returns the new array doubled.
+// You can use this result for further processing.
+
+</script>
+
+<script>
+    function diff(a,b) { console.log( a +', ' + this.name  + ", " + b);}
+let person1 = { name: 'Thrisha katukuri'};
+diff.call(person1, "Hello", "Indian");  
+
+</script>
+
+<script>
+    let numbers = [1, 2, 3, 4, 5, 6];
+    let final = [...numbers.filter(n => n % 2 === 0).map(n => n * 2)];
+console.log(final);
+
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+let doubledEvens = evenNumbers.map(num => num * 2);
+let finalResult = [...doubledEvens];
+console.log(finalResult); 
+
+
+// filter() → keeps only even numbers [2, 4, 6]
+// map() → doubles them [4, 8, 12]
+// ... → creates a clean copy into finalResult
+
+</script>
+
+<script>
+  let user = {
+    name: "Aditi",
+    greet: function() {
+    console.log("Hello, my name is " + this.name); }
+  };
+  let button = document.getElementById("Btn").addEventListener("click", user.greet.bind(user));
+
+
+  // If we pass user.greet directly, 'this' will be lost inside the function
+  // So we bind 'this' to the user object
+</script>
+
+<script>
+  let greeter = {
+              name: "thrisha",
+              greet: function(...a) {
+              a.forEach(a => {
+              console.log(`Hi ${a}, I'm ${this.name}`);
+               });
+               }
+               };
+let boundGreet = greeter.greet.bind(greeter);
+let namesToGreet = ["krishnaveni", "sanjeevarao", "jaswanth"];
+
+boundGreet(...namesToGreet);
+</script>
+
+<!-- <script>
+let arr1 = [1, 2];
+let arr2 = [3, 4];
+let combined = [...arr1, ...arr2];
+
+console.log(combined); // Output: [1, 2, 3, 4]
+
+let str = "hello";
+let chars = [...str];  
+console.log(chars); // ['h', 'e', 'l', 'l', 'o']
+
+function sum(a, b, c) {
+  return a + b * c * b % b; //b = 2, c = 3 ,b * c * b = 2 * 3 * 2 = 12 , 12 % b = 12 % 2 = 0
+}
+let nums = [1, 2, 3];
+console.log(sum(...nums));  // 6
+
+let arrr1 = [1, 2, 3];
+let arrr2 = [...arrr1]; 
+console.log(arrr2); // Shallow copy of arr1
+
+
+ </script> -->
+
+ <script>
+  // The rest parameter is used in function declarations to gather extra arguments into an array, giving your functions flexibility to handle any number of inputs.
+  function showArgs(a, b, ...rest) {
+  console.log('a:', a);
+  console.log('b:', b);
+  console.log('rest:', rest);
+}
+
+showArgs(1, 2, 3, 4, 5);
+a: 1
+b: 2
+rest: [3, 4, 5]
+ </script>
+ 
+<script>
+ function addListItem() {
+      const ul = document.getElementById("myList");
+      const li = document.createElement("li");
+      li.textContent = "New item";
+      ul.appendChild(li);
+    }
+</script>
+
+<script>
+   const paragraph = document.getElementById("myParagraph");
+
+paragraph.addEventListener("mouseover", () => {
+  paragraph.style.color = "blue";
+});
+
+paragraph.addEventListener("mouseout", () => {
+  paragraph.style.color = "black";
+});
+</script>
+
+<script>
+  const selectElement = document.getElementById("fontSizeSelect");
+    const paragraph1 = document.getElementById("textParagraph");
+
+    selectElement.addEventListener("change", () => {
+      const selectedSize = selectElement.value;
+      paragraph1.style.fontSize = selectedSize;
+    });
+</script>
+
+<script>
+  function calculateSquareRoot() {
+      const input = prompt("Enter a number:");
+      // let num1 = Math.sqrt(input);
+      // console.log(num1);
+      const number = parseFloat(input);
+      const resultParagraph = document.getElementById("result");
+
+      if (isNaN(number)) {
+        resultParagraph.textContent = "Please enter a valid number.";
+      } else if (number < 0) {
+        resultParagraph.textContent = "Error: Cannot calculate the square root of a negative number.";
+      } else {
+        const squareRoot = Math.sqrt(number);
+        console.log(squareRoot);
+        
+        resultParagraph.textContent = `The square root of ${number} is ${squareRoot}`;
+      }
+    }
+</script>
+
+<script>
+ const output = document.getElementById("output");
+
+for (let i = 1; i <= 100; i++) {
+  let text = "";
+
+  if (i % 3 === 0) text += "Fizz";
+  if (i % 5 === 0) text += "Buzz";
+
+  const result = text || i;
+
+  console.log(result);
+  // output.textContent += result + "\n";
+}
+
+</script>
+
+<script>
+  const car = {
+  make: "Toyota",
+  model: "Camry",
+  year: 2014,
+
+  getAge: function () {
+    const currentYear = new Date().getFullYear();
+    return currentYear - this.year;
+  }
+};
+
+// Example usage:
+console.log(`Car: ${car.make} ${car.model} (${car.year})`);
+console.log(`Age of the car: ${car.getAge()} years`);
+
+</script>
+
+<script>
+  const getNamesStartingWithA = (arr) =>
+  arr
+    .filter(obj => obj.name.startsWith("A"))
+    .map(obj => obj.name);
+
+  const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Amanda", age: 22 },
+  { name: "Charlie", age: 28 }
+];
+
+const result3 = getNamesStartingWithA(people);
+console.log(result3); // Output: ["Alice", "Amanda"]
+</script>
+
+<script>
+  const removeVowels = str => str.replace(/[aeiouAEIOU]/g, "");
+  const input = "Hello World";
+const result = removeVowels(input);
+console.log(result); // Output: "Hll Wrld"
+
+</script>
+
+<script>
+  const peoples = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 22 },
+  { name: "David", age: 28 }
+];
+
+peoples.sort((a, b) => a.age - b.age);
+
+console.log(peoples);
+
+</script>
+
+<script>
+  function count(start, end) {
+  let current = start;
+
+  const interval = setInterval(() => {
+    console.log(current);
+
+    if (current >= end) {
+      clearInterval(interval); 
+    }
+
+    current++;
+  }, 100); 
+}
+count(1, 10);
+
+</script>
+
+</body>
+</html>

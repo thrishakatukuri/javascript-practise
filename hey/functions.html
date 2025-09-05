@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <center>
+        <h1>Functions🫡</h1>
+    </center>
+    <script>
+       
+//  1.current bill calculation
+function currentBill() {
+            let units= prompt("enter the number of units:-")
+        if(units <= 50){
+            let bill = units * 1;
+           console.log(`(${units} units:) RS: ${bill}/-`);
+        }
+        else if (units >= 51 && units <= 100){
+         let bill = units * 2;
+            console.log(`(${units} units:) RS:  ${bill}/-`);
+        }
+        else if (units >= 101 && units <= 150){
+         let bill = units * 3;
+            console.log(`(${units} units:) RS:  ${bill}/-`);
+        }
+        else if (units >= 151 && units <= 199){
+         let bill = units * 4;
+            console.log(`(${units} units:) RS:  ${bill}/-`);
+        }
+        else if (units >= 200){
+         let bill = units * 5;
+          let discountAmount = (10 * bill) / 100;
+          let finalAmount = bill - discountAmount;
+          console.log(`(${units} units:) After 10% discount RS:  ${finalAmount}`);
+        }
+    }
+    currentBill()
+
+//  2.multiples
+ function multiples(){
+   let i = prompt("enter the value");
+              if ( i % 3 == 0  &&  i % 5 == 0){
+                 console.log("FizzBuzz");
+               }
+               else if ( i % 3 == 0){
+                 console.log("Fizz");
+               }
+               else if ( i % 5 == 0){
+                 console.log("Buzz");
+               }
+               else{
+                   console.log(i);
+               }
+            }
+       multiples()
+     
+//  3.salary calculations
+    function employeeSalary(){
+        let empolyeeId = prompt("Enter EmployeeId-");
+        let hours = prompt("Enter number of hours worked");
+        let week = prompt("Enter number of weeks worked");
+        let bonus = prompt("Enter the bonus");
+        let wage = 40;
+        let salary;
+           if ( hours <= 40){
+             let salary = (`${hours}` * wage);
+               console.log( ` ${empolyeeId} : ${week * salary + bonus}`);
+           }
+           else if (hours >= 41){
+             let overTimeHrs = (`${hours}` - 40);
+             let overPay = overTimeHrs * (1.5* wage);
+             let salary1 =  (40 * wage) + overPay ;
+             console.log(`  ${empolyeeId}` `:` `${week}` * salary1+ `${bonus} `)
+           }
+         }
+     employeeSalary()
+</script>
+</body>
+</html>

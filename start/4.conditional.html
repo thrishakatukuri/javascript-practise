@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //conditional statements(if , if-else , else-if , switch)
+    age = 81
+    if(age<18){
+        console.log("minor");
+    }else if(age>=18 && age<=60){
+        console.log("women/men");
+    }else if(age>60 && age ==80){
+        console.log("senior-citizen");
+    }else{
+        console.log("old");
+    }
+
+    age1 = 7;
+    switch (age1) {
+        case (age1<18):           
+        console.log("minor");
+        break;
+
+        case (age1>=18 && age1<=60):
+        console.log("women/men");
+        break;
+
+        case (age1>60 && age1 ==80):
+        console.log("senior-citizen");
+        break;
+
+        default:
+        console.log("old");
+            break;
+    }
+   </script> 
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color:plum;
+        }
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+        h1{
+            margin:100px 0px 0px 20px;
+            font-size: 3rem;
+        }
+        button{
+            width:200px;
+            height:50px;
+            font-size: 2rem;
+            border-radius: 50px;
+            margin:50px 0px 0px 0px;
+        }
+        .dice {
+            width: 100px;
+            height: 100px;
+            font-size: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: lightgray;
+        }
+        .rolling {
+            animation: spin 0.2s 2 linear;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        #result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎲 Dice Roll Game 🎲</h1>
+    <button id="rollButton">Roll Dice</button>
+    <div class="dice-container">
+        <p id="dice1" class="dice">🎲</p>
+        <p id="dice2" class="dice">🎲</p>
+    </div>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("rollButton").addEventListener("click", rollDice);
+
+        function rollDice() {
+            let dice1 = document.getElementById("dice1");
+            let dice2 = document.getElementById("dice2");
+            let resultText = document.getElementById("result");
+            let rollButton = document.getElementById("rollButton");
+
+            resultText.innerHTML = ""; 
+            rollButton.disabled = true; 
+
+            dice1.classList.add("rolling");
+            dice2.classList.add("rolling");
+
+            let rollingInterval = setInterval(() => {
+                dice1.innerHTML = getRandomDice();
+                dice2.innerHTML = getRandomDice();
+            }, 100);
+
+            setTimeout(() => {
+                clearInterval(rollingInterval); 
+
+                let finalDice1 = getDiceNumber();
+                let finalDice2 = getDiceNumber();
+
+                dice1.innerHTML = getDiceEmoji(finalDice1);
+                dice2.innerHTML = getDiceEmoji(finalDice2);
+
+                dice1.classList.remove("rolling");
+                dice2.classList.remove("rolling");
+
+                if (finalDice1 > finalDice2) {
+                    resultText.innerHTML = " 🫡1st player won";
+                } else if (finalDice2 > finalDice1) {
+                    resultText.innerHTML = " 2nd player won🫡";
+                } else {
+                    resultText.innerHTML = "It's a Tie🤷‍♀️";
+                }
+
+                rollButton.disabled = false; 
+            }, 2000);
+        }
+
+        function getRandomDice() {
+            let num = Math.floor(Math.random() * 6) + 1;
+            return getDiceEmoji(num);
+        }
+
+        function getDiceNumber() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+
+        function getDiceEmoji(number) {
+            const diceEmojis = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+            return diceEmojis[number - 1];
+        }
+    </script>
+</body>
+</html>
+
+

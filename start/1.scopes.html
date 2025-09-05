@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // with var
+
+        // console.log(e);//undefined
+        // var e = 10
+        // console.log(e);//10
+        // // console.log(g);
+        // // console.log(h);
+        // function f() {
+        //     var g = 20
+        //     console.log(e);//10
+        //     console.log(g);//20
+        //     console.log(h);//undefined
+        //     console.log(i);//undefined
+        //     if (true) {
+        //         var h = "hi"
+        //     console.log(e);//10
+        //     console.log(g);//20
+        //     console.log(h);//hi
+        //     console.log(i);//undefined
+        //        if (true) {
+        //         var i = "hello"
+        //        console.log(e);//10
+        //        console.log(g);//20
+        //        console.log(h);//hi
+        //        console.log(i);//hello
+        //        }
+        //        console.log(e);//10
+        //        console.log(g);//20
+        //        console.log(h);//hi
+        //        console.log(i);//hello
+        //     }
+        //     console.log(e);//10
+        //     console.log(g);//20
+        //     console.log(h);//hi
+        //     console.log(i);//hello
+        // }
+        //     console.log(e);//10
+        //     // console.log(g);
+        //     // console.log(h);
+        //     // console.log(i);
+        // f()   
+        //     console.log(e);//10
+        //     // console.log(g);
+        //     // console.log(h);       
+
+        // // with let
+        // console.log(e);//undefined
+        // var e = 10
+        // console.log(e);//10
+        // // console.log(g);
+        // // console.log(h);
+        // function f() {
+        //     let g = 20
+        //     console.log(e);//10
+        //     console.log(g);//20
+        //     // console.log(h);
+        //     // console.log(i);
+        //     if (true) {
+        //         let h = "hi"
+        //     console.log(e);//10
+        //     console.log(g);//20
+        //     console.log(h);//hi
+        //     // console.log(i);
+        //        if (true) {
+        //         let i = "hello"
+        //        console.log(e);//10
+        //        console.log(g);//20
+        //        console.log(h);//hi
+        //        console.log(i);//hello
+        //        }
+        //        console.log(e);//10
+        //        console.log(g);//20
+        //        console.log(h);//hi
+        //     //    console.log(i);
+        //     }
+        //     console.log(e);//10
+        //     console.log(g);//20
+        //     // console.log(h);
+        //     // console.log(i);
+        // }
+        //     console.log(e);//10
+        //     // console.log(g);
+        //     // console.log(h);
+        //     // console.log(i);
+        // f()   
+        //     console.log(e);//10
+        //     // console.log(g);
+        //     // console.log(h);       
+
+        // // with let
+        // console.log(e);//undefined
+        // var e = 10
+        // console.log(e);//10
+        // function f() {
+        //     console.log(e);//139 line then //undefined cpz block scope
+        //     var e = 11
+        //     var g = 20
+        //     console.log(e);//11
+        //     console.log(g);//20
+        //     console.log(h);//ud
+        //     console.log(i);//ud
+        //     console.log(j);//ud
+        //     if (true) {
+        //         var e = 12
+        //         var g = 21
+        //         var h = "hi"
+        //     console.log(e);//12
+        //     console.log(g);//21
+        //     console.log(h);//hi
+        //     console.log(i)//ud;
+        //     console.log(j);//ud
+        //        if (true) {
+        //         var i = "hello"
+        //         var h = "hi thrisha"
+        //         var e = 13
+        //         var g = 22
+        //         var j = 23
+        //     //    console.log(a);
+        //        console.log(e);//13
+        //        console.log(g);//22
+        //        console.log(h);//hi thrisha
+        //        console.log(i);//hello
+        //        console.log(j);//23
+        //        }
+        //        console.log(e);//13
+        //        console.log(g);//22
+        //        console.log(h);//hi thrisha
+        //        console.log(i);//hello
+        //        console.log(j);//23
+        //     }
+        //     console.log(e);//13
+        //     console.log(g);//22
+        //     console.log(h);//hi thrisha
+        //     console.log(i);//hello
+        //     console.log(j);//23
+        // }
+        //     console.log(e);//10
+        //     // console.log(g);
+        //     // console.log(h);
+        //     // console.log(i);
+        // f()   
+        //     console.log(e);//10
+        //     // console.log(g);
+        //     // console.log(h);       
+
+//with 3 lets
+        // console.log(e);
+        // let e = 10
+        // console.log(e);//10
+        // function f() {
+        //     console.log(e);//10
+        //      e = 11
+        //      g = 20
+        //     console.log(e);//11
+        //     console.log(g);//20
+        //     // console.log(h);//
+        //     // console.log(i); 
+        //     // console.log(j);
+        //     if (true) {
+        //          e = 12
+        //          g = 21
+        //          h = "hi"
+        //     console.log(e);//12
+        //     console.log(g);//21
+        //     console.log(h);//hi
+        //     // console.log(i)
+        //     // console.log(j);
+        //        if (true) {
+        //          i = "hello"
+        //          h = "hi thrisha"
+        //          e = 13
+        //          g = 22
+        //          j = 23
+        //     //    console.log(a);
+        //        console.log(e);//13
+        //        console.log(g);//22
+        //        console.log(h);//hi thrisha
+        //        console.log(i);//hello
+        //        console.log(j);//23
+        //        }
+        //        console.log(e);//13
+        //        console.log(g);//22
+        //        console.log(h);//hi thrisha
+        //        console.log(i);//hello
+        //        console.log(j);//23
+        //     }
+        //     console.log(e);//13
+        //     console.log(g);//22
+        //     console.log(h);//hi thrisha
+        //     console.log(i);//hello
+        //     console.log(j);//23
+        // }
+        //     console.log(e);//10
+        //     // console.log(g);
+        //     // console.log(h);
+        //     // console.log(i);
+        // f()   
+        //     console.log(e);//13
+        //     // console.log(g);
+        //     // console.log(h);       
+
+false
+        // console.log(e);
+        let e = 10
+        console.log(e);//10
+        function f() {
+            console.log(e);//10
+             e = 11
+             g = 20
+            console.log(e);//11
+            console.log(g);//20
+            // console.log(h);//
+            // console.log(i); 
+            // console.log(j);
+            if (true) {
+                 e = 12
+                 g = 21
+                 h = "hi"
+            console.log(e);//12
+            console.log(g);//21
+            console.log(h);//hi
+            // console.log(i)
+            // console.log(j);
+               if (false) {//code doent exicute
+                 i = "hello"
+                 h = "hi thrisha"
+                 e = 13
+                 g = 22
+                 j = 23
+            //    console.log(a);
+               console.log(e);//13
+               console.log(g);//22
+               console.log(h);//hi thrisha
+               console.log(i);//hello
+               console.log(j);//23
+               }//code doent exicute up to hear
+
+               console.log(e);//12
+               console.log(g);//21
+               console.log(h);//hi
+            //    console.log(i);
+            //    console.log(j);
+            }
+            console.log(e);//12
+            console.log(g);//21
+            console.log(h);//hi
+            // console.log(i);
+            // console.log(j);
+        }
+            console.log(e);//10
+            // console.log(g);
+            // console.log(h);
+            // console.log(i);
+        f()   
+            console.log(e);//12
+            // console.log(g);
+            // console.log(h);
+
+// //true
+//         // console.log(e);
+//         let e = 10
+//         console.log(e);//10
+//         function f() {
+//             console.log(e);//10
+//              e = 11
+//              g = 20
+//             console.log(e);//11
+//             console.log(g);//20
+//             // console.log(h);//
+//             // console.log(i); 
+//             // console.log(j);
+//             if (false) {//code doent exicute
+//                  e = 12
+//                  g = 21
+//                  h = "hi"
+//             console.log(e);//12
+//             console.log(g);//21
+//             // console.log(h);
+//             // console.log(i)
+//             // console.log(j);
+//                if (true) {
+//                  i = "hello"
+//                  h = "hi thrisha"
+//                  e = 13
+//                  g = 22
+//                  j = 23
+//             //    console.log(a);
+//                console.log(e);//13
+//                console.log(g);//22
+//                console.log(h);//hi thrisha
+//                console.log(i);//hello
+//                console.log(j);//23
+//                }
+
+//                console.log(e);//13
+//                console.log(g);//22
+//                console.log(h);//hi thrisha
+//                console.log(i);
+//                 console.log(j);
+//             }//code doent exicute up to hear
+
+//             console.log(e);//11
+//             console.log(g);//20
+//             // console.log(h);
+//             // console.log(i);
+//             // console.log(j)
+//         }
+//             console.log(e);//10
+//             //  console.log(g);
+//             //  console.log(h);
+//             //  console.log(i);
+//         f()   
+//             console.log(e);//11
+//             // console.log(g);
+//             // console.log(h);
+
+    </script>
+</body>
+</html>

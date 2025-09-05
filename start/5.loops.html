@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+</head>
+<center>
+    <h1><strong>loops</strong></h1>
+</center>
+
+<body>
+    <script>
+        //loops(for , while , do-while)
+        for (i = 1; i <= 10; i++) {
+            if (i % 2 == 0)
+                console.log("(" + i + ")" + "multiple of 2");
+            else if (i % 3 == 0) {
+                console.log("(" + i + ")" + "multiple of 3");
+            } else {
+                console.log(i);
+            }
+        }
+        console.log("_____________________");
+
+        // while
+        i = 0;
+        counte = 0;
+        counto = 0;
+        while (i <= 19) {
+            if (i % 2 == 0) {
+                counte++
+                console.log(i + "- even" + ":" + counte);
+            } else {
+                counto++
+                console.log(i + "- odd" + ":" + counto);
+            } i++
+        }
+        console.log("EvenCount : " + counte);
+        console.log("OddCount  : " + counto);
+        console.log("_____________________");
+
+        //do-while
+        i = 1;
+        counte = 0;
+        counto = 0;
+        do {
+            if (i % 2 == 0) {
+                counte++
+                console.log(i + "- even" + ":" + counte);
+            } else {
+                counto++
+                console.log(i + "- odd" + ":" + counto);
+            } i++
+        } while (i <= 5)
+        console.log("EvenCount : " + counte);
+        console.log("OddCount  : " + counto);
+        console.log("_____________________");
+
+
+
+        //patterns using stars
+        var n = 5
+        for (let i = 1; i <= n; i++) {
+            let stars = ""
+            for (let j = 1; j <= n - i; j++) {
+                stars += " "
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                stars += "*"
+            }
+            console.log(stars);
+        }
+        for (let i = n - 1; i >= 1; i--) {
+            let stars = ""
+            for (let j = 1; j <= n - i; j++) {
+                stars += " "
+            }
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                stars += "*"
+            }
+            console.log(stars);
+        }
+
+        //  Diamond
+        n = 10
+        for (let i = 1; i < n; i++) {
+            let star = ""
+            let m = i <= 5 ? i : n - i
+            for (let j = 1; j < n - m; j++) {
+                star += " "
+            }
+            for (let j = 1; j <= 2 * m - 1; j++) {
+                star += "*"
+            }
+            console.log(star);
+        }
+
+        // Step words
+        var name = "12345"
+        var n = name.length
+        for (let i = 1; i <= n; i++) {
+            var steps = ""
+            for (let j = i; j <= n - i; j++) {
+                steps += ""
+            }
+            for (let j = 0; j <= 1 * i - 1; j++) {
+                steps += name[j % name.length] + " ";
+            }
+            console.log(steps);
+        }
+
+        //   x , +
+        var a = 5
+        for (let i = 1; i <= a; i++) {
+            let stars = "";
+            for (let j = i; j <= a; j++) {
+                stars += ""
+            }
+            for (let j = 1; j <= a; j++) {
+                if (j === i || j === a - i + 1 || i == 3 || j == 3) {
+                    stars += " *";
+                } else {
+                    stars += "  ";
+                }
+            }
+            console.log(stars);
+        }
+
+        // x
+        var n = 5
+        for (let i = 1; i <= n; i++) {
+            var stars = ""
+            for (let j = 1; j <= n; j++) {
+                stars += "";
+            }
+            for (let j = 1; j <= n; j++) {
+                if (j == i || j == a - i + 1) {
+                    stars += "|";
+                } else {
+                    stars += " ";
+                }
+            }
+            console.log(stars);
+        }
+
+
+        // square +  x
+        var n = 9
+        for (let i = 1; i <= n; i++) {
+            var stars = ""
+            for (let j = i; j <= n; j++) {
+                stars += " ";
+            }
+            for (let j = 1; j <= n; j++) {
+                if (j == i || j == n - i + 1 || i == 1 || j == 1 || j == n || i == n) {
+                    stars += " * ";
+                } else {
+                    stars += "   ";
+                }
+            }
+            console.log(stars);
+        }
+
+        // Square
+        var n = 3
+        for (let i = 1; i <= n; i++) {
+            var stars = ""
+            for (let j = i; j <= n; j++) {
+                stars += "";
+            }
+            for (let j = 1; j <= n; j++) {
+                if (i === 1 || i === n || j === 1 || j === n) {
+                    stars += " @ ";
+                } else {
+                    stars += "   ";
+                }
+            }
+            console.log(stars);
+        }
+
+        //Rectangle
+        var n = 3
+        var n1 = 8
+        for (let i = 1; i <= n; i++) {
+            var stars = ""
+            for (let j = i; j <= n1; j++) {
+                stars += "";
+            }
+            for (let j = 1; j <= n1; j++) {
+                if (i === 1 || i === n || j === 1 || j === n1) {
+                    stars += " * ";
+                } else {
+                    stars += "   ";
+                }
+            }
+            console.log(stars);
+        }
+
+        //circle,octagon
+        const z = 7
+        for (let i = 1; i <= z; i++) {
+            var stars = ""
+            for (let j = i; j <= z; j++) {
+                stars += " ";
+            }
+            for (let j = 1; j <= z; j++) {
+                if (i === 1 && (j === 3 || j === 4 || j === 5) ||
+                    i === 2 && (j === 2 || j === 6) ||
+                    i === 3 && (j === 1 || j === 7) ||
+                    i === 4 && (j === 1 || j === 7) ||
+                    i === 5 && (j === 1 || j === 7) ||
+                    i === 6 && (j === 2 || j === 6) ||
+                    i === 7 && (j === 3 || j === 4 || j === 5)
+                ) {
+                    stars += " * ";
+                } else {
+                    stars += "   ";
+                }
+            }
+            console.log(stars);
+        }
+
+        // pentagon
+        var B = 5
+        const b = 7
+        for (let i = 1; i <= B; i++) {
+            let stars = ""
+            for (let j = 1; j <= b; j++) {
+                if (i === 1 && (j === 3 || j === 4 || j === 5) ||
+                    i === 2 && (j === 2 || j === 6) ||
+                    i === 3 && (j === 1 || j === 7) ||
+                    i === 4 && (j === 2 || j === 6) ||
+                    i === 5 && (j === 3 || j === 4 || j === 5)
+                ) {
+                    stars += " * "
+                } else {
+                    stars += "   "
+                }
+            }
+            console.log(stars);
+        }
+
+
+        // triangle
+        var C = 3;
+        var C1 = 5;
+        for (let i = 1; i <= C; i++) {
+            let stars = ""
+            for (let j = 1; j <= C1; j++) {
+                stars += ""
+            }
+            for (let j = 1; j <= C1; j++) {
+                if (i == 1 && (j === 3) ||
+                    i == 2 && (j === 4 || j === 2) ||
+                    i === 3
+                ) {
+                    stars += " * "
+                } else {
+                    stars += "   "
+                }
+            }
+            console.log(stars);
+        }
+
+        // house
+        var C = 13;
+        var C1 = 9;
+        for (let i = 1; i <= C; i++) {
+            let stars = ""
+            for (let j = 1; j <= C1; j++) {
+                stars += ""
+            }
+            for (let j = 1; j <= C1; j++) {
+                if (i === 1 && (j === 5) ||
+                    i === 2 && (j === 4 || j === 6) ||
+                    i === 3 && (j === 3 || j === 7) ||
+                    i === 4 && (j === 2 || j === 8) ||
+                    i === 6 && (j === 1 || j === 9) ||
+                    i === 7 && (j === 1 || j === 9 || j === 3 || j === 4 || j === 4 || j === 5 || j === 6 || j === 7) ||
+                    i === 8 && (j === 1 || j === 9 || j === 3 || j === 7 || j === 4) ||
+                    i === 9 && (j === 1 || j === 9 || j === 3 || j === 7 || j === 5) ||
+                    i === 10 && (j === 1 || j === 9 || j === 3 || j === 7 || j === 4 || j === 5) ||
+                    i === 11 && (j === 1 || j === 9 || j === 3 || j === 7 || j === 5) ||
+                    i === 13 && (j === 1 || j === 9 || j === 3 || j === 7 || j === 4) ||
+                    i === 12 && (j === 1 || j === 9 || j === 3 || j === 7 || j === 4) ||
+                    i === 5 || i === 13
+                ) {
+                    stars += " * "
+                } else {
+                    stars += "   "
+                }
+            }
+            console.log(stars);
+        }
+
+        //Natural numbers
+        for (let i = -5; i <= 10; i++) {
+            if (i > 0 && Number.isInteger(i)) {
+                console.log(i);
+            }
+        }
+
+        //whole numbers
+        for (let i = -5; i <= 10; i++) {
+            if (i >= 0 && Number.isInteger(i)) {
+                console.log(i);
+            }
+        }
+        console.log("------------------------");
+
+        // prime number
+        for (let i = 2; i <= 50; i++) {
+            let x = 0;
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    x++;
+                    break;
+                }
+            }
+            if (x === 0) {
+                console.log(i);
+            }
+        }
+        //  or
+        for (let i = 2; i <= 50; i++) {
+            let x = 0;
+            for (let j = 2; j <= Math.sqrt(i); j++) {//for time complecity it only checks for 9%(3,2)
+                if (i % j === 0) {
+                    x++;
+                    break;
+                }
+            }
+            if (x === 0) {
+                console.log(i);
+            }
+        }
+        console.log("------------------------");
+
+        // Fibonacci numbers
+        //print a, a==b & b==a+b 
+        var a1 = 0
+        b1 = 1
+        c1 = 0
+        for (let i = 1; b1 <= 50; i++) {
+            console.log(a1);
+            c1++
+            var temp = a1 + b1
+            a1 = b1
+            b1 = temp
+        }
+        console.log("Count:- " + "(" + C1 + ")");
+        console.log("------------------------");
+
+
+        // or
+        let A1 = 0, B1 = 1; COUNT = 0
+        for (let i = 1; i <= 20; i++) {
+            console.log(A1);
+            COUNT++
+            let temp = A1 + B1;
+            A1 = B1;
+            B1 = temp;
+        }
+        console.log("Count:- " + "(" + COUNT + ")");
+        console.log("------------------------");
+
+
+        //Even
+        count = 0
+        for (let i = -10; i <= 50; i++) {
+            if (i >= 0 && i % 2 == 0) {
+                console.log(i);
+                count++
+            }
+        }
+        console.log("COUNT :- " + count);
+
+        //Odd
+        count = 0
+        for (let i = -10; i <= 50; i++) {
+            if (i % 2 == 1 && Number.isInteger(i)) {
+                console.log(i);
+                count++
+            }
+        }
+        console.log("COUNT :- " + count);
+
+        //numbers increment in each step
+        name = "12345"
+        n = name.length
+        for (let i = 1; i <= n; i++) {
+            var a = ""
+            for (let j = 1; j <= n - i; j++) {
+                a += ""
+            }
+            for (let j = 0; j <= 1 * i - 1; j++) {
+                a += name[j % name.length] + " "
+            }
+            console.log(a);
+        }
+
+        // substring
+        name = "12345"
+        n = name.length;
+        for (let i = 1; i <= n; i++) {
+            var a = ""
+            for (let j = 1; j <= n - i; j++) {
+                a += " "
+            }
+            a += name.substring(0, i).split("").join(" ");
+            console.log(a);
+        }
+        //  name = prompt("Enter any data")
+        n = 4;
+        for (let i = 1; i <= n; i++) {
+            var a = ""
+            for (let j = 1; j <= n - i; j++) {
+                a += "  "
+            }
+            for (let j = 1; j <= i; j++) {
+                a += j * 2 + " "
+                // a += (j * 2).toString().padStart(3, " ") + " ";
+            }
+            console.log(a);
+        }
+
+        //
+        n = 5
+        for (let i = 1; i <= n; i++) {
+            var a = ""
+            for (let j = 1; j <= n - i; j++) {
+                a += " "
+            }
+            for (let j = 1; j <= i; j++) {
+                a += j * 5 + " "
+            }
+            console.log(a)
+        }
+        console.log("------------------------");
+
+        name = "thrisha"
+        name1 = name.split("").reverse().join("")
+        console.log(name1);
+
+        console.log("------------------------");
+
+        name = "thrisha katukuri aka venni"
+        var splits = name.split(" ")
+        splits[1] = splits[1].split("").reverse().join("")
+        var name1 = splits.join(" ")
+        console.log(name1);
+
+        console.log("------------------------");
+
+
+        name = "athrisha"
+        name1 = name.indexOf("a")
+        name2 = name.lastIndexOf("a")
+        console.log(name1);
+        console.log(name2);
+
+        console.log("------------------------");
+
+        name = "thrisha katukuri aka venni"
+        var splits = name.split(" ")
+        splits.splice(1, 1)
+        // splits = splits.slice(1)
+        name1 = splits.join(" ")
+        console.log(name1);
+
+        name = "thrisha katukuri aka venni"
+        var splits = name.split(" ")
+        splits[1] = "madam"
+        name1 = splits.join(" ")
+        console.log(name1);
+
+        name = "thrisha katukuri aka"
+        var splits = name.split(" ")
+        splits.splice(3, 0, "venni katukuri")
+        name1 = splits.join(" ")
+        console.log(name1);
+        console.log("------------------------");
+
+        var arr = [[4, 12, 13, 44, 22, 2, 1, 1, 32, 19], [22, 67, 33, 23, 88888, 1, -55, 21, 17]]
+        console.log("sort array         :" + JSON.stringify(arr))
+
+        arr[0] = arr[0].sort((a, b) => a - b)
+        arr[1] = arr[1].sort((a, b) => a - b)
+        console.log("noraml string arr  :" + arr[0] + arr[1]);
+
+        let combined = arr[0].concat(arr[1]).filter(x => x !== undefined).sort((a, b) => a - b).reverse();
+        console.log("combined           :" + JSON.stringify(combined)); // pure numbers, sorted descending
+
+        console.log("sort array         :" + JSON.stringify(arr))
+
+        arr[0] = arr[0].sort((a, b) => a - b).reverse()
+        arr[1] = arr[1].sort((a, b) => a - b).reverse()
+        console.log("sort reverse       :" + JSON.stringify(arr))//sort//sort
+
+        var arr = [[4, 12, 13, 44, 22, 2, 1, 1, 32, 19], [22, 67, 33, 23, 88888, 1, -55, 21, 17]]
+        arr[0] = arr[0].sort((a, b) => a - b)
+        arr[1] = arr[1].sort((a, b) => a - b)
+        console.log("noraml string arr  :" + "[" + arr[0] + "," + arr[1] + "]");
+
+
+        // string length
+        var n = 12345678156
+        var n1 = n.toString().split("").length
+        console.log(n1);
+
+        var n = [10, 20, 222, , 43]
+        console.log("normal : " + n.length);
+
+        var n = [10, 20, 222, , 43]
+        count = 0
+        for (var i in n)
+            count++
+        console.log("using for-in : " + count);//ignore empty-spaces
+
+
+        var arr = [12, 234, 1222, 11, 23]
+        for (let i = 0; i < arr.length; i++) {
+            count = 0;
+            value = arr[i]
+            while (value > 0) {
+                value = Math.floor(value / 10)
+                count++
+            }
+            console.log(arr[i] + " : " + count);
+        }
+        console.log("array length : " + arr.length);
+
+        var list = "aasdfghsdfghjkl;ASDFASDFGHJGHJKL1234567890!@#$%^&*"
+        let uCase = ""
+        let lCase = ""
+        let nums = ""
+        let splCase = ""
+
+        for (let i = 0; i < list.length; i++) {
+            var char = list[i]
+            if (char >= 'a' && char <= 'z') {
+                if (!uCase.includes(char)) {
+                    uCase += char
+                }
+            }
+            else if (char >= 'A' && char <= 'Z') {
+                if (!lCase.includes(char)) {
+                    lCase += char
+                }
+            }
+            else if (char >= '0' && char <= '9') {
+                if (!nums.includes(char)) {
+                    nums += char
+                }
+            }
+            else {
+                if (!splCase.includes(char)) {
+                    splCase += char
+                }
+            }
+        }
+        console.log(uCase, " : ", uCase.length);
+        console.log(lCase, " : ", lCase.length);
+        console.log(nums, " : ", nums.length);
+        console.log(splCase, " : ", splCase.length);
+
+
+        var list = "aasdfghsdfghjkl;ASDFASDFGHJGHJKL123456a7890!@#$%^&*";
+
+        let uCase1 = ""
+        let lCase1 = ""
+        let nums1 = ""
+        let splCase1 = ""
+
+        // Create an object to count character occurrences
+        let counts = {};
+
+        for (let i = 0; i < list.length; i++) {
+            let char = list[i];
+            counts[char] = (counts[char] || 0) + 1; // Increment count
+        }
+
+        let keys = Object.keys(counts);
+
+        // Now separate the characters into their categories with counts
+        // for (let char in counts) {
+            for (let i = 0; i < keys.length; i++) {
+                let char = keys[i];//
+            let entry = char +"-"+ counts[char];
+            if (char >= 'a' && char <= 'z') {
+                lCase1 += entry+", ";
+            } else if (char >= 'A' && char <= 'Z') {
+                uCase1 += entry+", ";
+            } else if (char >= '0' && char <= '9') {
+                nums1 += entry+", ";
+            } else {
+                splCase1 += entry+", ";
+            }
+        }
+
+        console.log("Lowercase  :", lCase1);
+        console.log("Uppercase  :", uCase1);
+        console.log("Numbers    :", nums1);
+        console.log("Specials   :", splCase1);
+
+
+        var names = [ 10,33,12,12,12,34,66,7,8,5,95,64,34]
+        names1 = names.filter(x=>x===12).length
+        console.log(names1);
+
+        var names = [ 10,33,12,12,12,34,66,7,8,5,95,64,34]
+        var result = []
+        names.forEach(x =>
+        {result.push(x * 2)})
+        console.log(result.join(" , "));
+
+        var names = [1,2,3,4,5,6,7]
+        names1 = names.map(x=>x+2).join(", ")
+        console.log(names1);
+        
+        var names = [0,1,2,3,4,5,6,7]
+        n= names.slice(1,4)//before end value
+        console.log(n);
+        console.log(names.splice(0,6).join(", "));//0-5
+        //1,2,3,4,5,6//before end value
+
+        var names = [0,1,2,3,4,5,6,7]
+        console.log(names.splice(1,6).join(", "));//0-5
+        //1,2,3,4,5,6//using 1 end upto end value
+
+        var names = [60,83,21,93,49,51,36,76]
+        names.sort((a,b)=>a-b)
+        // n1= n.split("")
+        // console.log(n1);
+        console.log(names);
+        
+        
+
+
+        
+        
+
+        
+
+    </script>
+</body>
+
+</html>
