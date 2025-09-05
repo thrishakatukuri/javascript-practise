@@ -112,6 +112,7 @@
         h1.innerHTML= 'Thrisha'; //5.innerHTML/innerText
         h1.setAttribute('class','box');
         //doesnot show class,id in console
+        // but shows value of class,id
         // console.log(h1);
         document.body.appendChild(h1);
         console.log(h1.getAttribute("class"));
@@ -130,9 +131,9 @@
     let rep = document.getElementById('btn4');
     let rep1 = document.getElementsByTagName('h2');
     rep.addEventListener('click', () => {
-    for (let i = 0; i < rep1.length; i++) { 
-        rep1[i].innerHTML = rep1[i].innerHTML.replace('thrisha'," ");
-    }
+    // for (let i = 0; i < rep1.length; i++) { 
+        rep1.innerHTML = rep1.innerHTML.replace('thrisha'," ");
+    // }
     });
 
     // 8.append

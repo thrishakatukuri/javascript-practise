@@ -3,8 +3,113 @@
 <title>Document</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <body>
-    <h1>hello</h1>
-    <p>hey</p>
+
+    <style>
+        h1 {
+            background-color: rgb(21, 0, 255);
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            border: 5px solid rgb(12, 12, 12);
+            box-sizing: border-box;
+            display: flex;
+            color: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+    </style>
+
+
+    <div id="container">
+        <center>
+            <button id="btn">Click Me!...</button>
+            <h1>Thrisha</h1>
+
+            <button id="btn1">Click Me!...</button>
+            <h1>katukuri</h1>
+        </center>
+    </div>
+    <script>
+        // let container = document.getElementsByClassName('container')[0].addEventListener(
+        //     'click', () => {
+        //         let btn = document.getElementById('btn')
+        //         btn.style.color = 'green'
+        //     }
+        // )
+
+        // let btn = document.getElementById('btn')
+        // let btn1 = document.getElementById('btn1')
+
+        // let h1 = document.getElementsByTagName('h1')[0]
+        // let H1 = document.getElementsByTagName('h1')[1]
+
+        // btn.addEventListener('click', () => {
+        //     h1.style.color = 'white'
+        //     h1.style.background = 'plum'
+        // })
+
+        // let colors = ['green','yellow','plum','orange','red','black']
+        // let i=0;
+        // let count = 0;
+        // btn1.addEventListener('click', () => {
+        //     H1.style.color = 'white'
+
+        //     H1.style.background = colors[i];
+        //    i=(i+1) % colors.length
+        //    count++
+
+        //    if(count === 3){
+        //     btn1.disabled = true;
+        //    }
+        // })
+
+
+        let container = document.getElementById('container')
+
+        let products = [
+            { name: 'hi', age: 20 },
+            { name: 'hello', age: 21 },
+            { name: 'hey', age: 22 },
+            { name: 'hai', age: 23 },
+        ]
+       let res= products.forEach((items) => {
+            container.innerHTML += `
+            <p>${items.name} : ${items.age}</p>
+            `
+
+        })
+        console.log(products)
+        console.log(res)
+
+
+        let products1 = [
+            { name1: 'hi', age1: 20 },
+            { name1: 'hello', age1: 21 },
+            { name1: 'hey', age1: 22 },
+            { name1: 'hai', age1: 23 },
+        ]
+        let res1= products1.map((items) => {
+            container.innerHTML += `
+            <p>${items.name1} : ${items.age1}</p>
+            `
+             return `${items.name1} : ${items.age1}`
+
+        })
+        console.log(products1)
+        console.log(res1)
+
+    </script>
 </body>
+
 </html>
